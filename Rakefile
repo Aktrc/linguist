@@ -127,7 +127,7 @@ namespace :benchmark do
 
         summary.each do |new_lang, count|
           percent = count / previous_count.to_f
-          puts "  #{percent} change to #{new_lang}"
+          puts "  #{sprintf("%.2f", percent)}% change to #{new_lang} (count files)"
         end
       end
     else
