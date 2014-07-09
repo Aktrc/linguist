@@ -122,9 +122,9 @@ namespace :benchmark do
           result[new_lang] += 1
           result
         end
+        puts "  #{lang}"
+        puts "    #{summary}
       end
-
-      puts summary
     else
       puts "No changes"
     end
