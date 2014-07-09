@@ -123,7 +123,7 @@ namespace :benchmark do
           result
         end
         puts "  #{lang}"
-        puts "    #{summary}
+        puts "    #{summary}"
       end
     else
       puts "No changes"
