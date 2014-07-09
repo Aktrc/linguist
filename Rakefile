@@ -122,8 +122,13 @@ namespace :benchmark do
           result[new_lang] += 1
           result
         end
-        puts "  #{lang}"
-        puts "    #{summary}"
+
+        puts "#{lang}"
+
+        summary.each do |new_lang, count|
+          percent = count / previous_count.to_f
+          puts "  #{percent} change to #{new_lang}"
+        end
       end
     else
       puts "No changes"
