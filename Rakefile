@@ -114,9 +114,12 @@ namespace :benchmark do
     puts "Changes between #{reference}...#{compare}"
     changes = reference_classifications.deep_diff(compare_classifications)
 
+    # Are there any differences in the linguist classification?
     if changes.any?
       changes.each do |lang, files|
         previous_count = reference_classifications[lang].size
+
+        # Count the number of changed classifications (language and number)
         summary = changes[lang].inject(Hash.new(0)) do |result, (key, val)|
           new_lang = val.last
           result[new_lang] += 1
@@ -125,6 +128,7 @@ namespace :benchmark do
 
         puts "#{lang}"
 
+        # Work out the percentage change
         summary.each do |new_lang, count|
           percent = count / previous_count.to_f
           puts "  #{sprintf("%.2f", percent)}% change to #{new_lang} (count files)"
