@@ -31,7 +31,7 @@ if File.directory?(path)
     puts
     file_breakdown = repo.breakdown_by_file
     file_breakdown.each do |lang, files|
-      puts "#{lang}:" 
+      puts "#{lang}:"
       files.each do |file|
         puts file
       end
@@ -55,7 +55,7 @@ elsif File.file?(path)
     puts "  type:      #{type}"
     puts "  mime type: #{blob.mime_type}"
     puts "  language:  #{blob.language}"
-    
+
     if blob.large?
       puts "  blob is too large to be shown"
     end
